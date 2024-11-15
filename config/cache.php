@@ -15,7 +15,7 @@ return [
     |
     */
 
-    'default' => env('CACHE_STORE', 'database'),
+    'default' => env('CACHE_STORE', 'file'),
 
     /*
     |--------------------------------------------------------------------------
@@ -34,7 +34,7 @@ return [
     'stores' => [
 
         'array' => [
-            'driver' => 'array',
+            'driver' => 'file',
             'serialize' => false,
         ],
 

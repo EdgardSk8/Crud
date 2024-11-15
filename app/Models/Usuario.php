@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Hash;
 
 class Usuario extends Model
 {
@@ -16,4 +17,10 @@ class Usuario extends Model
         'nombre',
         'contrasena',
     ];
+
+    // Mutator para hashear la contraseña antes de guardarla
+    public function setContrasenaAttribute($value)
+    {
+        $this->attributes['contrasena'] = Hash::make($value);
+    }
 }
